@@ -10,8 +10,8 @@ ofxMixedFont is an openFrameworks addon to handle multiple fonts. It can render 
 
 - ofxMixedFont enables the user to handle multiple fonts as if they were single font
 - ofxMixedFont can render UNICODE characters including color emoji (Google's CBLC+CBDT and Apple's SBIX)
-- The user may create own font class that derived from ofxBaseFont class, and ofxMixedFont can be used with it
 - The user may overwrite typesetting function of ofxMixedFont by the use of std::function
+- The user may create own font class that derived from ofxBaseFont class, and ofxMixedFont can be used with it
 
 ## Installation
 
@@ -78,8 +78,8 @@ ofxMixedFont is an openFrameworks addon to handle multiple fonts. It can render 
   void ofApp::draw(){
     ...
     auto func = [&](const ofxBaseFontPtr &font, const ofPoint &point, ofxGlyphDataList &glyph_list) {
-    ofPoint pos = point;
-    for (auto &glyph : glyph_list) {
+      ofPoint pos = point;
+      for (auto &glyph : glyph_list) {
         glyph.coord = pos;
 
         if (glyph.props.code_point == U"\n") {
@@ -117,7 +117,7 @@ ofxMixedFont is an openFrameworks addon to handle multiple fonts. It can render 
 
 ## System Tested
 
-- macOS (10.12) + Xcode (8.0) + openFrameworks 0.9.4 (osx)
+- macOS (10.12) + Xcode (8.1) + openFrameworks 0.9.4 (osx)
 
 ## ToDo
 
@@ -130,4 +130,36 @@ ofxMixedFont is an openFrameworks addon to handle multiple fonts. It can render 
 
 ofxMixedFont is distributed under the MIT License.
 This gives everyone the freedoms to use ofxMixedFont in any context: commercial or non-commercial, public or private, open or closed source.
-Please see License.txt for details.
+Please see License for details.
+
+ofxMixedFont includes the following:
+
+##### openFrameworks
+Copyright (c) 2004 - openFrameworks Community  
+Licensed under the MIT license.
+
+##### FreeType2
+Copyright (c) 1996-2002, 2006 - David Turner, Robert Wilhelm, and Werner Lemberg  
+Licensed under the FreeType project license.
+
+##### libpng
+Copyright (c) 2000-2002, 2004, 2006-2016 - Guy Eric Schalnat, Andreas Dilger, John Bowler, Glenn Randers-Pehrson, and others  
+Licensed under the libpng license.
+
+##### HarfBuzz
+Copyright (c) 2010,2011,2012  Google, Inc.  
+Copyright (c) 2012  Mozilla Foundation  
+Copyright (c) 2011  Codethink Limited  
+Copyright (c) 2008,2010  Nokia Corporation and/or its subsidiary(-ies)  
+Copyright (c) 2009  Keith Stribley  
+Copyright (c) 2009  Martin Hosken and SIL International  
+Copyright (c) 2007  Chris Wilson  
+Copyright (c) 2006  Behdad Esfahbod  
+Copyright (c) 2005  David Turner  
+Copyright (c) 2004,2007,2008,2009,2010  Red Hat, Inc.  
+Copyright (c) 1998-2004  David Turner and Werner Lemberg  
+Licensed under the so-called "Old MIT" license.
+
+##### bzip2
+Copyright (c) 1996-2010 Julian R Seward  
+Licensed under the BSD-style license.
