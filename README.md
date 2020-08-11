@@ -118,6 +118,7 @@ ofxMixedFont is an openFrameworks addon to handle multiple fonts. It can render 
 ## System Tested
 
 - macOS (10.12) + Xcode (8.1) + openFrameworks 0.9.4 (osx)
+- macOS (10.15) + Xcode (11.4) + openFrameworks 0.11.0 (osx)
 
 ## ToDo
 
