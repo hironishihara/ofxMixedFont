@@ -1,6 +1,7 @@
 #pragma once
 
-#include "ofTypes.h"
+#include "ofPoint.h"
+#include "ofConstants.h"
 
 #include <string>
 #include <vector>
