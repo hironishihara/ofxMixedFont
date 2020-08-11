@@ -1,6 +1,7 @@
 #pragma once
 
-#include "ofTypes.h"
+#include "ofPoint.h"
+#include "ofConstants.h"
 
 #include <string>
 #include <vector>
@@ -55,7 +56,7 @@ typedef struct {
 typedef std::function<void (const std::shared_ptr<ofxBaseFont> &font, const ofPoint &coord, std::vector<ofxGlyphData> &glyph_list)> ofxCompFunc;
 void defaultCompFunc(const std::shared_ptr<ofxBaseFont> &font, const ofPoint &coord, std::vector<ofxGlyphData> &glyph_list);
 
-class ofxBaseFont : public enable_shared_from_this<ofxBaseFont>
+class ofxBaseFont : public std::enable_shared_from_this<ofxBaseFont>
 {
 public:
     ofxBaseFont();
