@@ -56,7 +56,7 @@ static std::shared_ptr<FT_FaceRec_> initFTFace(std::shared_ptr<FT_LibraryRec_> f
     FT_FaceRec_ *ft_face;
     FT_Error err = FT_New_Face(ft_library.get(), file_path.c_str(), font_id, &ft_face);
     if (err) {
-        string errorString = "unknown font type";
+        std::string errorString = "unknown font type";
         if(err == 1) errorString = "invalid filename";
         ofLogError("ofxFT2Font") << "initFTFace(): couldn't create new face for \"" << file_name << "\": FT_Error " << err << " " << errorString;
         return std::shared_ptr<FT_FaceRec_>();
@@ -519,7 +519,7 @@ int ofxFT2Font::getGlyphIndex(const std::u32string &code_point)
     return index;
 }
 
-int ofxFT2Font::loadGlyph(const u32string &code_point, bool try_load_sub)
+int ofxFT2Font::loadGlyph(const std::u32string &code_point, bool try_load_sub)
 {
     std::u32string tmp_code_point = { code_point[0] };
     
